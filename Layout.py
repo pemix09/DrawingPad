@@ -29,13 +29,17 @@ class Layout(App):
         clearButton.bind(on_press = self.clear)
 
         rectangleButton = buttonsCollection.GetRectangleButton()
-        rectangleButton.bind(on_press = self.Rectangle)
+        rectangleButton.bind(on_press = self.painter.DrawRectangle)
+
+        circleButton = buttonsCollection.GetCircleButton()
+        circleButton.bind(on_press = self.painter.DrawCircle)
 
         #Add buttons to buttons panel
         self.buttons.add_widget(saveButton)
         self.buttons.add_widget(loadButton)
         self.buttons.add_widget(clearButton)
         self.buttons.add_widget(rectangleButton)
+        self.buttons.add_widget(circleButton)
 
         return mainLayout
 
@@ -51,6 +55,3 @@ class Layout(App):
 
     def Load(self, obj):
         image = self.painter.export_as_image().load('image.jpg')
-
-    def Rectangle(self, obj):
-        self.painter.DrawRectangle()

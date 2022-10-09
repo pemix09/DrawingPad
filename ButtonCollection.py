@@ -18,3 +18,7 @@ class Buttons:
     def GetRectangleButton(self):
         rectangleButton = Button(text="Rectangle", size_hint=(0.1,0.1))
         return rectangleButton
+
+    def GetCircleButton(self):
+        circleButton = Button(text="Circle", size_hint=(0.1, 0.1))
+        return circleButton
