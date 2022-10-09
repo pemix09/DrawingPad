@@ -1,5 +1,5 @@
 from kivy.storage.jsonstore import JsonStore
-
+from Canvas import canvas
 
 class FileSerializer:
 
@@ -7,7 +7,7 @@ class FileSerializer:
         self.store = JsonStore(_filename)
         self.canvasKey = 'Canvas'
 
-    def SaveCanvas(self, canvas):
+    def SaveCanvas(self):
         if canvas != '':
             self.store.put(self.canvasKey + 'X', canvas.x)
             self.store.put(self.canvasKey + "Y", canvas.y)

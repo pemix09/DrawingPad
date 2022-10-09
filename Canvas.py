@@ -1,11 +1,12 @@
 from kivy.uix.widget import Widget
 from kivy.graphics import Line
 
+canvas = ''
+
 class Canvas(Widget):
 
     def __init__(self, **kwargs):
         super(Canvas, self).__init__(**kwargs)
-        self.image = ''
 
     def on_touch_down(self, touch):
         with self.canvas:
@@ -15,4 +16,6 @@ class Canvas(Widget):
         touch.ud["line"].points += (touch.x, touch.y)
 
     def on_touch_up(self, touch):
-        self.image = touch.ud["line"].points
+        #using global variable
+        global canvas
+        canvas = touch.ud["line"].points
