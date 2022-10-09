@@ -1,4 +1,5 @@
 from kivy.uix.button import Button
+from kivy.uix.textinput import TextInput
 
 
 class Buttons:
@@ -22,3 +23,11 @@ class Buttons:
     def GetCircleButton(self):
         circleButton = Button(text="Circle", size_hint=(0.1, 0.1))
         return circleButton
+
+    def GetTextButton(self):
+        textButton = Button(text="Text", size_hint=(0.1, 0.1))
+        return textButton
+
+    def GetTextInput(self):
+        textInput = TextInput(size_hint=(0.3, 0.1), multiline=False)
+        return textInput
